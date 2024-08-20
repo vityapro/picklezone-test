@@ -37,7 +37,73 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import '@ionic/angular/css/palettes/high-contrast.always.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "theme/typography";
+
+
+ion-input {
+  &.input-fill-solid.sc-ion-input-md-h {
+    --background:  var(--input-bg, #fff);
+    --border-color: #00869C;
+    --border-radius: 0.5rem;
+    --highlight-color: #A2A2A2;
+
+    &:hover,
+    &.has-focus,
+    &.has-focus.ion-valid {
+      --border-color: #00869C;
+      --background:  var(--input-bg, #fff);
+    }
+
+    .input-wrapper.sc-ion-input-md{
+      border: var(--border-width) var(--border-style) var(--border-color);
+      border-end-end-radius: var(--border-radius);
+      border-end-start-radius: var(--border-radius);
+
+      .input-highlight{
+        display: none;
+      }
+    }
+
+    .input-bottom {
+      padding-inline-start: 0;
+
+      .error-text {
+        font: var(--font-11M);
+      }
+    }
+  }
+}
+
+ion-button{
+  min-height: 3rem;
+  text-transform: none;
+  --border-radius: 0.5rem;
+
+  &.rounded{
+    --border-radius: 50%;
+  }
+
+  &.social{
+    --padding-top: 0.75rem;
+    --padding-end: 0.75rem;
+    --padding-start: 0.75rem;
+    --padding-bottom: 0.75rem;
+  }
+
+  &.button-large{
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 3.5rem;
+  }
+}
+
+ion-item.item {
+  &.full-width {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+  }
+}

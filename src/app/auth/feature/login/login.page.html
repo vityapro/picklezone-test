@@ -1,0 +1,77 @@
+<ion-content class="ion-padding">
+  <div class="pt-44 w-full h-full flex flex-col">
+    <ion-row class="justify-center">
+      <ion-icon class="w-60 h-12" src="/assets/logo-long.svg"></ion-icon>
+    </ion-row>
+
+    <ion-row class="grow items-center justify-center flex-col">
+      <h3 class="text-center w-full font-bold text-black mb-6">Log In</h3>
+
+      <div [formGroup]="loginForm" class="w-full">
+        <div class="full-width w-full mb-4 relative flex items-center">
+          <ion-input label="Email / Username"
+                     mode="md"
+                     fill="solid"
+                     formControlName="email"
+                     label-placement="floating">
+          </ion-input>
+          <ion-icon class="absolute text-xl right-4 z-10 pointer-events-none"
+                    name="mail-outline"
+                    [color]="loginForm.get('email')?.invalid ? 'body-3' : 'primary'"
+                    aria-hidden="true"></ion-icon>
+        </div>
+        <div class="full-width w-full mb-3 relative flex items-center">
+          <ion-input label="Password"
+                     mode="md"
+                     [type]="inputType()"
+                     fill="solid"
+                     formControlName="password"
+                     label-placement="floating">
+          </ion-input>
+          <ion-button fill="clear" (click)="updatePasswordType()" class="absolute right-0 top-0 bottom-0 m-0 z-10">
+            <ion-icon class="text-xl"
+                      color="body-3"
+                      [name]="inputType() === 'password' ? 'eye-outline' : 'eye-off-outline'"
+                      [color]="loginForm.get('password')?.invalid ? 'body-3' : 'primary'"
+                      aria-hidden="true"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+      <p class="mb-6 w-full text-sm">
+        <ion-text color="primary">Forgot password?</ion-text>
+      </p>
+      <ion-button class="w-full mb-4 mt-0 ml-0 mr-0"
+                  [disabled]="loginForm.invalid"
+                  expand="block" size="large" (click)="login()">Log In
+      </ion-button>
+      <ion-button class="w-full m-0" color="neutral" expand="block" size="large">
+        <ion-text color="primary">Face Login</ion-text>
+      </ion-button>
+      <div class="relative flex items-center w-full justify-center divider mt-5 pt-0.5 mb-1">
+        <ion-text color="body-3" class="w-full">
+          <hr class="w-full">
+        </ion-text>
+        <span class="relative z-1 p-2.5">
+          <ion-text color="body-3">or</ion-text>
+        </span>
+        <ion-text color="body-3" class="w-full">
+          <hr class="w-full">
+        </ion-text>
+      </div>
+      <div class="mb-6">
+        <ion-button size="normal" color="neutral mt-0 mb-0 ml-0 mr-6" class="rounded social">
+          <ion-icon class="text-2xl" src="/assets/social-logo/apple.svg" />
+        </ion-button>
+        <ion-button size="normal" color="neutral m-0" class="rounded social">
+          <ion-icon class="text-2xl" src="/assets/social-logo/google.svg" />
+        </ion-button>
+        <ion-button size="normal" color="neutral mt-0 mb-0 ml-6 mr-0" class="rounded social">
+          <ion-icon class="text-2xl" src="/assets/social-logo/facebook.svg" />
+        </ion-button>
+      </div>
+      <p class="font-semibold mb-6">
+        <ion-text color="body-2">Don’t have an account?</ion-text>&nbsp;<ion-text color="primary">Join Now</ion-text>
+      </p>
+    </ion-row>
+  </div>
+</ion-content>

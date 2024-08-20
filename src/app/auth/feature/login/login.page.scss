@@ -1,0 +1,12 @@
+ion-content{
+  --background: url("/assets/bg/login.webp");
+  &::part(background){
+    background-size: 100% 100%;
+  }
+
+  .divider{
+    hr{
+      border-color: var(--ion-color-body-3);
+    }
+  }
+}

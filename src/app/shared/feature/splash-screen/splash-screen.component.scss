@@ -1,3 +1,9 @@
-.splash{
-  background-image: url("/assets/splash-bg.png");
+
+:host{
+  z-index: 1;
+  pointer-events: none;
+
+  .splash{
+    background-image: url("/assets/splash-bg.png");
+  }
 }
